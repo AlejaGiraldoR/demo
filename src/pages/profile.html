@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil - ListUp</title>
+  <link rel="stylesheet" href="../../public/css/profile.css">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Sección izquierda -->
+    <div class="profile-section">
+      <div class="profile-pic">
+        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Foto de perfil">
+      </div>
+
+      <div class="info">
+        <p><strong>Nombre y Apellido:</strong> Neque porro quisme</p>
+        <hr>
+        <p><strong>Edad:</strong> 27 años</p>
+        <hr>
+        <p><strong>Correo electrónico:</strong> loremipsum@gmail.com</p>
+        <hr>
+        <p><strong>Miembro desde:</strong> 24 Junio 2025</p>
+      </div>
+
+      <div class="buttons">
+  <!-- Botón para ir a editar perfil -->
+  <button onclick="window.location.href='editprofile.html'" class="btn edit">
+    Editar perfil
+  </button>
+
+  <!-- Botón para eliminar cuenta -->
+  <button onclick="window.location.href='deleteaccount.html'" class="btn delete">
+    Eliminar cuenta
+  </button>
+  <button onclick="cerrarSesion()" class="btn logout">Cerrar sesión</button>
+
+</div>
+
+    </div>
+
+    <!-- Sección derecha con logo -->
+    <div class="logo-section">
+      <img src="https://img.icons8.com/ios-filled/100/000000/todo-list.png" alt="ListUp logo">
+      <h1>ListUp</h1>
+    </div>
+  </div>
+  <script>
+  function cerrarSesion() {
+    // Aquí puedes limpiar sesión o tokens (dependiendo de cómo lo manejes)
+    alert("Sesión cerrada ✅");
+    window.location.href = "log.html"; // Redirige a la página de login
+  }
+</script>
+
+</body>
+</html>

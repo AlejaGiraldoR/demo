@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eliminar cuenta</title>
+  <link rel="stylesheet" href="../../public/css/deleteaccount.css">
+</head>
+<body>
+  <div class="container">
+    <!-- IZQUIERDA -->
+    <div class="left">
+      <div class="delete-box">
+        <h2>¿Seguro que deseas ELIMINAR tu cuenta?</h2>
+        <input type="password" placeholder="Contraseña" id="password">
+        <input type="text" placeholder='Escribe "ELIMINAR" para confirmar' id="confirmText">
+        <div class="buttons">
+          <button class="btn cancel" onclick="window.location.href='profile.html'">Cancelar</button>
+          <button class="btn delete" onclick="deleteAccount()">Eliminar</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DERECHA -->
+    <div class="right">
+      <img src="https://img.icons8.com/ios-filled/100/000000/todo-list.png" alt="Logo" style="width:80px; margin-bottom: 10px;">
+      <h2>ListUp</h2>
+    </div>
+  </div>
+
+  <!-- Modal de confirmación -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <h3>CUENTA ELIMINADA</h3>
+      <p>Tu cuenta ha sido eliminada con éxito.</p>
+      <button onclick="closeModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    function deleteAccount() {
+      const password = document.getElementById('password').value;
+      const confirmText = document.getElementById('confirmText').value;
+
+      if (password && confirmText === "ELIMINAR") {
+        document.getElementById('successModal').style.display = 'flex';
+      } else {
+        alert("Debes ingresar tu contraseña y escribir 'ELIMINAR' para confirmar.");
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('successModal').style.display = 'none';
+      // Redirige al login o página principal
+      window.location.href = "tasks.html";
+    }
+  </script>
+</body>
+</html>

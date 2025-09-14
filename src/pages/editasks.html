@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar tarea</title>
+  <link rel="stylesheet" href="../../public/css/newtask.css"> <!-- reutilizamos el mismo CSS -->
+</head>
+<body>
+  <div class="crear-tarea-container">
+    <!-- Formulario a la izquierda -->
+    <div class="form-section">
+      <h2>EDITAR TAREA</h2>
+      <form id="formEditarTarea">
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" required value="Tarea ejemplo">
+
+        <label for="detalle">Detalle:</label>
+        <input type="text" id="detalle" name="detalle" required value="Detalle de ejemplo">
+
+        <label for="fecha">Fecha:</label>
+        <input type="date" id="fecha" name="fecha" required value="2025-09-12">
+
+        <label for="hora">Hora:</label>
+        <input type="time" id="hora" name="hora" required value="12:00">
+
+        <label for="estado">Estado:</label>
+        <select id="estado" name="estado" required>
+          <option value="por-hacer">Por Hacer</option>
+          <option value="haciendo" selected>Haciendo</option>
+          <option value="hecho">Hecho</option>
+        </select>
+
+        <button type="submit" class="btn-guardar">ACTUALIZAR</button>
+      </form>
+    </div>
+
+    <!-- Logo a la derecha -->
+    <div class="logo-section">
+      <img src="https://img.icons8.com/ios-filled/100/000000/todo-list.png" alt="ListUp Logo">
+      <h1>ListUp</h1>
+    </div>
+  </div>
+</body>
+</html>

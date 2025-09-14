@@ -1,0 +1,124 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #e0e0e0;
+  height: 100vh;   /* que ocupe todo */
+  display: flex;
+}
+
+.container {
+  display: flex;
+  width: 100vw;   /* 100% del ancho */
+  height: 100vh;  /* 100% del alto */
+  background: white;
+}
+
+/* Perfil - lado izquierdo */
+.profile-section {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* centramos mejor */
+}
+
+.profile-pic img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.info {
+  width: 100%;
+  text-align: center;
+}
+
+.info p {
+  margin: 10px 0;
+}
+
+hr {
+  margin: 10px auto;
+  width: 70%;
+  border: 0.5px solid #aaa;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.edit {
+  background: #ccc;
+  color: black
+}
+
+.edit:hover {
+  background-color: #4caf50; /* verde */
+  color: white;
+  box-shadow: 0px 4px 10px rgba(76, 175, 80, 0.4);
+}
+
+.delete {
+  background: #ccc;
+  color: black
+}
+
+.delete:hover {
+  background-color: #f44336; /* rojo */
+  color: white;
+  box-shadow: 0px 4px 10px rgba(244, 67, 54, 0.4);
+}
+
+/* Logo - lado derecho */
+.logo-section {
+  flex: 1;
+  background: #d9d9d9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.logo-section img {
+  width: 80px;
+  margin-bottom: 10px;
+}
+
+.logo-section h1 {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.btn.logout {
+  background-color: #de4444; /* gris oscuro */
+  color: white;
+  margin-top: 10px;
+}
+
+.btn.logout:hover {
+  background-color: #d71919;
+}
+

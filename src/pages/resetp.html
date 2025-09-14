@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ListUp - Restablecer Contraseña</title>
+  <link rel="stylesheet" href="../../public/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Sección Izquierda: Formulario -->
+    <div class="form-container">
+      <h2>Restablece tu contraseña</h2>
+      
+      <form id="resetForm">
+        <label for="new-password">Nueva contraseña:</label>
+        <input type="password" id="new-password" placeholder="••••••••" required>
+        
+        <label for="confirm-password">Confirmar contraseña:</label>
+        <input type="password" id="confirm-password" placeholder="••••••••" required>
+        
+        <!-- Mensajes de validación -->
+        <p id="error-message" class="error-message">Las contraseñas no coinciden</p>
+        <p class="info-text">
+          Su contraseña debe contener mínimo 8 caracteres,<br>
+          incluir mayúscula, minúscula y número
+        </p>
+        
+        <button type="submit">Actualizar contraseña</button>
+      </form>
+    </div>
+    
+    <!-- Sección Derecha: Logo -->
+    <div class="logo-container">
+      <img src="https://img.icons8.com/ios-filled/100/000000/todo-list.png" alt="Logo">
+      <h1>ListUp</h1>
+    </div>
+    
+  </div>
+
+  <script>
+    // Validación de contraseñas
+    const form = document.getElementById("resetForm");
+    const newPass = document.getElementById("new-password");
+    const confirmPass = document.getElementById("confirm-password");
+    const errorMessage = document.getElementById("error-message");
+
+    errorMessage.style.display = "none"; // Oculto al inicio
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      if (newPass.value !== confirmPass.value) {
+        errorMessage.style.display = "block";
+        errorMessage.textContent = "Las contraseñas no coinciden";
+      } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(newPass.value)) {
+        errorMessage.style.display = "block";
+        errorMessage.textContent = "La contraseña no cumple los requisitos";
+      } else {
+        errorMessage.style.display = "none";
+        alert("✅ Contraseña actualizada con éxito");
+        // Aquí iría la redirección al login o dashboard
+        window.location.href = "login.html";
+      }
+    });
+  </script>
+</body>
+</html>
