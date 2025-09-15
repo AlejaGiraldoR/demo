@@ -4,61 +4,36 @@
 
 const nodemailer = require("nodemailer");
 
-// variable global para almacenar el transporter
-let transporter;
-
-// ======================================================
-// INICIALIZAR TRANSPORTER
-// ======================================================
-// crea un transporter usando cuenta de prueba de Ethereal
-const initMailer = async () => {
-  // si ya existe el transporter, no hacemos nada
-  if (!transporter) {
-    // creamos cuenta de prueba en Ethereal
-    const testAccount = await nodemailer.createTestAccount();
-
-    // configuramos transporter con host, puerto y auth
-    transporter = nodemailer.createTransport({
-      host: "smtp.ethereal.email",
-      port: 587,
-      secure: false, // false = no SSL
-      auth: {
-        user: testAccount.user, // usuario de prueba
-        pass: testAccount.pass, // contraseña de prueba
-      },
-    });
-
-    // mostramos en consola credenciales de prueba
-    console.log("✅ Ethereal listo. Credenciales de prueba:");
-    console.log(testAccount);
-  }
-};
+// configuramos el transporter directamente con tu cuenta real
+const transporter = nodemailer.createTransport({
+  host: process.env.EMAIL_HOST,    // ejemplo: smtp.gmail.com
+  port: process.env.EMAIL_PORT,    // ejemplo: 587
+  secure: false,                   // true si usas puerto 465
+  auth: {
+    user: process.env.EMAIL_USER,  // tu correo real
+    pass: process.env.EMAIL_PASS,  // contraseña de app de Gmail
+  },
+});
 
 // ======================================================
 // FUNCION PARA ENVIAR CORREOS
 // ======================================================
-// to: destinatario
-// subject: asunto del correo
-// html: contenido en HTML del correo
 const sendMail = async (to, subject, html) => {
-  // aseguramos que el transporter esté inicializado
-  await initMailer();
+  try {
+    const info = await transporter.sendMail({
+      from: `"Soporte ToDoList" <${process.env.EMAIL_USER}>`,
+      to,
+      subject,
+      html,
+    });
 
-  // enviamos el correo usando transporter
-  const info = await transporter.sendMail({
-    from: '"Soporte ToDoList" <no-reply@todolist.com>', // remitente
-    to,        // destinatario
-    subject,   // asunto
-    html,      // cuerpo en HTML
-  });
-
-  // mostramos en consola info del mensaje
-  console.log("📧 mensaje enviado: %s", info.messageId);
-  console.log("🔗 vista previa: %s", nodemailer.getTestMessageUrl(info));
-
-  // retornamos link de vista previa que se puede abrir en el navegador
-  return nodemailer.getTestMessageUrl(info);
+    console.log("📧 mensaje enviado: %s", info.messageId);
+    return info.messageId; // ya no usamos Ethereal
+  } catch (err) {
+    console.error("Error enviando correo:", err);
+    throw err;
+  }
 };
 
-// exportamos la función para usarla en los controladores
 module.exports = { sendMail };
+
