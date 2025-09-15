@@ -1,0 +1,16 @@
+# ======================================================
+# NODE_MODULES
+# ======================================================
+node_modules/
+# carpeta donde npm instala todas las dependencias del proyecto
+# no se sube a git porque ocupa mucho espacio y puede instalarse de nuevo con `npm install`
+
+# ======================================================
+# VARIABLES DE ENTORNO
+# ======================================================
+.env
+# archivo que contiene configuraciones sensibles como:
+# - PUERTO (PORT)
+# - URI de la base de datos (MONGO_URI)
+# - Clave secreta para JWT (JWT_SECRET)
+# no se sube a git por seguridad
