@@ -38,32 +38,6 @@
     </div>
     
   </div>
-
-  <script>
-    // Validación de contraseñas
-    const form = document.getElementById("resetForm");
-    const newPass = document.getElementById("new-password");
-    const confirmPass = document.getElementById("confirm-password");
-    const errorMessage = document.getElementById("error-message");
-
-    errorMessage.style.display = "none"; // Oculto al inicio
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      if (newPass.value !== confirmPass.value) {
-        errorMessage.style.display = "block";
-        errorMessage.textContent = "Las contraseñas no coinciden";
-      } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/.test(newPass.value)) {
-        errorMessage.style.display = "block";
-        errorMessage.textContent = "La contraseña no cumple los requisitos";
-      } else {
-        errorMessage.style.display = "none";
-        alert("✅ Contraseña actualizada con éxito");
-        // Aquí iría la redirección al login o dashboard
-        window.location.href = "login.html";
-      }
-    });
-  </script>
+  <script src="../../public/js/resetp.js"></script>
 </body>
 </html>
