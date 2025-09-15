@@ -13,24 +13,13 @@
       <h2>CREAR NUEVA TAREA</h2>
       <form id="formTarea">
         <label for="titulo">Título:</label>
-        <input type="text" id="titulo" name="titulo" required>
+        <input type="text" id="titulo" name="title" required>
 
         <label for="detalle">Detalle:</label>
-        <input type="text" id="detalle" name="detalle" required>
-
-        <div class="row">
-          <div>
-            <label for="fecha">Fecha:</label>
-            <input type="date" id="fecha" name="fecha" required>
-          </div>
-          <div>
-            <label for="hora">Hora:</label>
-            <input type="time" id="hora" name="hora" required>
-          </div>
-        </div>
+        <input type="text" id="detalle" name="detail" required>
 
         <label for="estado">Estado:</label>
-        <select id="estado" name="estado" required>
+        <select id="estado" name="status" required>
           <option value="por-hacer">Por Hacer</option>
           <option value="haciendo">Haciendo</option>
           <option value="hecho">Hecho</option>
@@ -46,5 +35,6 @@
       <h1>ListUp</h1>
     </div>
   </div>
+  <script src="../../public/js/tasks.js"></script>
 </body>
 </html>

@@ -35,7 +35,7 @@
   <button onclick="window.location.href='deleteaccount.html'" class="btn delete">
     Eliminar cuenta
   </button>
-  <button onclick="cerrarSesion()" class="btn logout">Cerrar sesión</button>
+  <button id="logout-btn" class="btn logout">Cerrar sesión</button>
 
 </div>
 
@@ -47,13 +47,6 @@
       <h1>ListUp</h1>
     </div>
   </div>
-  <script>
-  function cerrarSesion() {
-    // Aquí puedes limpiar sesión o tokens (dependiendo de cómo lo manejes)
-    alert("Sesión cerrada ✅");
-    window.location.href = "log.html"; // Redirige a la página de login
-  }
-</script>
-
+  <script src="../../public/js/auth.js"></script>
 </body>
 </html>
