@@ -1,26 +1,32 @@
+// ======================================================
+// CONFIGURACION DE CONEXION A MONGODB
+// ======================================================
+
 const mongoose = require("mongoose");
 require("dotenv").config();
 
 const connectDB = async () => {
   try {
+    // conectamos usando la URI de .env
     if (!process.env.MONGO_URI) {
-      throw new Error("MONGO_URI no está definido en las variables de entorno");
+      throw new Error("MONGO_URI no está definido en .env");
     }
 
-    await mongoose.connect(process.env.MONGO_URI); // ya no necesitamos useNewUrlParser ni useUnifiedTopology
+    await mongoose.connect(process.env.MONGO_URI);
+
     console.log("✅ MongoDB conectado");
   } catch (error) {
-    console.error("❌ Error de conexión a MongoDB:", error.message);
-    process.exit(1); // detiene la app si no se conecta
+    console.error("❌ Error al conectar MongoDB:", error.message);
+    process.exit(1);
   }
 };
 
 const disconnectDB = async () => {
   try {
     await mongoose.disconnect();
-    console.log("✅ Desconectado de MongoDB");
+    console.log("🛑 Desconectado de MongoDB");
   } catch (error) {
-    console.error("❌ Error al desconectar de MongoDB:", error.message);
+    console.error("❌ Error al desconectar MongoDB:", error.message);
   }
 };
 
