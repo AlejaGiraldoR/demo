@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // reemplaza esta URL por la de tu frontend en Vercel
 const allowedOrigins = [
-  "https://vercel.com/joshuas-projects-dcbbea30/demoo/CKC9bzQqyK91oh63PKvXBEcLnHvg", // producción
+  "https://demoo-tawny.vercel.app/", // producción
   "http://localhost:3000"            // desarrollo local
 ];
 
