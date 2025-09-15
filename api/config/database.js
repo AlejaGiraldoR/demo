@@ -1,25 +1,26 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
 require("dotenv").config();
 
 const connectDB = async () => {
-    try{
-        await mongoose.connect(process.env.MONGO_URI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
-        console.log("MongoDB connected");  
-    } catch (error){
-        console.error("Error connecting to MongoDB:", error.message);
-        process.exit(1);
+  try {
+    if (!process.env.MONGO_URI) {
+      throw new Error("MONGO_URI no está definido en las variables de entorno");
     }
+
+    await mongoose.connect(process.env.MONGO_URI); // ya no necesitamos useNewUrlParser ni useUnifiedTopology
+    console.log("✅ MongoDB conectado");
+  } catch (error) {
+    console.error("❌ Error de conexión a MongoDB:", error.message);
+    process.exit(1); // detiene la app si no se conecta
+  }
 };
 
 const disconnectDB = async () => {
   try {
     await mongoose.disconnect();
-    console.log("Disconnected from MongoDB");
+    console.log("✅ Desconectado de MongoDB");
   } catch (error) {
-    console.error("Error disconnecting from MongoDB:", error.message);
+    console.error("❌ Error al desconectar de MongoDB:", error.message);
   }
 };
 
