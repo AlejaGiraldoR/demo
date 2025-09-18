@@ -1,51 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Perfil - ListUp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../public/css/profile.css">
 </head>
 <body>
-
-  <div class="container">
-    <!-- Sección izquierda -->
-    <div class="profile-section">
-      <div class="profile-pic">
-        <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Foto de perfil">
+  <div class="frame">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="LOGO EMPRESA.png" alt="Logo ListUp">
+        <div>
+          <h1>ListUp</h1>
+          <p>Mi perfil</p>
+        </div>
       </div>
+    </aside>
 
-      <div class="info">
-        <p><strong>Nombre y Apellido:</strong> Neque porro quisme</p>
-        <hr>
-        <p><strong>Edad:</strong> 27 años</p>
-        <hr>
-        <p><strong>Correo electrónico:</strong> loremipsum@gmail.com</p>
-        <hr>
-        <p><strong>Miembro desde:</strong> 24 Junio 2025</p>
+    <main class="main">
+      <div class="card">
+        <div style="display:flex;gap:16px;align-items:center">
+          <div class="profile-pic"><img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Foto de perfil"></div>
+          <div>
+            <h2 style="margin:0">Neque porro quisme</h2>
+            <p style="margin:6px 0 0 0;color:var(--muted)">Miembro desde: 24 Junio 2025</p>
+          </div>
+        </div>
+
+        <div class="info">
+          <p><strong>Nombre y Apellido:</strong> Neque porro quisme</p>
+          <hr>
+          <p><strong>Edad:</strong> 27 años</p>
+          <hr>
+          <p><strong>Correo electrónico:</strong> loremipsum@gmail.com</p>
+          <hr>
+        </div>
+
+        <div class="buttons">
+          <button onclick="window.location.href='editprofile.html'" class="btn edit">Editar perfil</button>
+          <button onclick="window.location.href='deleteaccount.html'" class="btn delete">Eliminar cuenta</button>
+          <button id="logout-btn" class="btn logout">Cerrar sesión</button>
+        </div>
       </div>
-
-      <div class="buttons">
-  <!-- Botón para ir a editar perfil -->
-  <button onclick="window.location.href='editprofile.html'" class="btn edit">
-    Editar perfil
-  </button>
-
-  <!-- Botón para eliminar cuenta -->
-  <button onclick="window.location.href='deleteaccount.html'" class="btn delete">
-    Eliminar cuenta
-  </button>
-  <button id="logout-btn" class="btn logout">Cerrar sesión</button>
-
-</div>
-
-    </div>
-
-    <!-- Sección derecha con logo -->
-    <div class="logo-section">
-      <img src="https://img.icons8.com/ios-filled/100/000000/todo-list.png" alt="ListUp logo">
-      <h1>ListUp</h1>
-    </div>
+    </main>
   </div>
   <script src="../../public/js/auth.js"></script>
 </body>

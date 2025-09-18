@@ -1,34 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Eliminar cuenta</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eliminar cuenta — ListUp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../../public/css/deleteaccount.css">
 </head>
 <body>
-  <div class="container">
-    <!-- IZQUIERDA -->
-    <div class="left">
-      <div class="delete-box">
+  <div class="frame">
+    <!-- Sidebar con logo y descripción -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="LOGO EMPRESA.png" alt="Logo empresa">
+        <div>
+          <h1>ListUp</h1>
+          <p>Gestión y tareas</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Área principal -->
+    <main class="main">
+      <div class="card">
         <h2>¿Seguro que deseas ELIMINAR tu cuenta?</h2>
+        <p>Introduce tu contraseña y escribe <strong>ELIMINAR</strong> para confirmar esta acción irreversible.</p>
+
         <input type="password" placeholder="Contraseña" id="password">
         <input type="text" placeholder='Escribe "ELIMINAR" para confirmar' id="confirmText">
+
         <div class="buttons">
           <button class="btn cancel" onclick="window.location.href='profile.html'">Cancelar</button>
           <button class="btn delete" onclick="deleteAccount()">Eliminar</button>
         </div>
       </div>
-    </div>
-
-    <!-- DERECHA -->
-    <div class="right">
-      <img src="https://img.icons8.com/ios-filled/100/000000/todo-list.png" alt="Logo" style="width:80px; margin-bottom: 10px;">
-      <h2>ListUp</h2>
-    </div>
+    </main>
   </div>
 
-  <!-- Modal de confirmación -->
+  <!-- Modal -->
   <div id="successModal" class="modal">
     <div class="modal-content">
       <h3>CUENTA ELIMINADA</h3>
@@ -51,7 +62,6 @@
 
     function closeModal() {
       document.getElementById('successModal').style.display = 'none';
-      // Redirige al login o página principal
       window.location.href = "tasks.html";
     }
   </script>
