@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const response = await fetch("http://localhost:3000/api/v1/auth/forgot-password", {
+        const response = await fetch("https://demo-290a.onrender.com/api/v1/auth/forgot-password", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
       errorMessage.style.display = "none";
 
       try {
-        const response = await fetch(`http://localhost:3000/api/v1/auth/reset-password/${token}`, {
+        const response = await fetch(`https://demo-290a.onrender.com/api/v1/auth/reset-password/${token}`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ password: newPass.value }),

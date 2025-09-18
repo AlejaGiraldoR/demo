@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const password = document.getElementById("password").value;
 
       try {
-        const response = await fetch("http://localhost:3000/api/v1/auth/login", {
+        const response = await fetch("https://demo-290a.onrender.com/api/v1/auth/login", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email, password }),
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       try {
-        const response = await fetch("http://localhost:3000/api/v1/users/signup", {
+        const response = await fetch("https://demo-290a.onrender.com/api/v1/users/signup", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ firstName, lastName, age, email, password, confirmPassword })
@@ -88,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (logoutBtn) {
     logoutBtn.addEventListener("click", async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/v1/auth/logout", {
+        const response = await fetch("https://demo-290a.onrender.com/api/v1/auth/logout", {
           method: "POST",
           headers: { "Content-Type": "application/json",
             "Authorization":`Bearer ${token}`
