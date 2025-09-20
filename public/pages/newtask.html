@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Crear nueva tarea — ListUp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/newtask.css">
+</head>
+<body>
+  <div class="frame">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="LOGO EMPRESA.png" alt="Logo ListUp">
+        <div>
+          <h1>ListUp</h1>
+          <p>Crear tarea</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="card">
+        <h2>CREAR NUEVA TAREA</h2>
+        <form id="formTarea">
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" name="title" required>
+
+          <label for="detalle">Detalle:</label>
+          <input type="text" id="detalle" name="detail" required>
+
+          <label for="estado">Estado:</label>
+          <select id="estado" name="status" required>
+            <option value="por-hacer">Por Hacer</option>
+            <option value="haciendo">Haciendo</option>
+            <option value="hecho">Hecho</option>
+          </select>
+
+          <button type="submit" class="btn-guardar">GUARDAR</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="../js/tasks.js"></script>
+</body>
+</html>

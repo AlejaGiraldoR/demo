@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Editar tarea — ListUp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/editask.css">
+</head>
+<body>
+  <div class="frame">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="LOGO EMPRESA.png" alt="Logo ListUp">
+        <div>
+          <h1>ListUp</h1>
+          <p>Edición de tareas</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="card">
+        <h2>EDITAR TAREA</h2>
+        <form id="formEditarTarea">
+          <label for="titulo">Título:</label>
+          <input type="text" id="titulo" name="titulo" required value="Tarea ejemplo">
+
+          <label for="detalle">Detalle:</label>
+          <input type="text" id="detalle" name="detalle" required value="Detalle de ejemplo">
+
+          <label for="fecha">Fecha:</label>
+          <input type="date" id="fecha" name="fecha" required value="2025-09-12">
+
+          <label for="hora">Hora:</label>
+          <input type="time" id="hora" name="hora" required value="12:00">
+
+          <label for="estado">Estado:</label>
+          <select id="estado" name="estado" required>
+            <option value="por-hacer">Por Hacer</option>
+            <option value="haciendo" selected>Haciendo</option>
+            <option value="hecho">Hecho</option>
+          </select>
+
+          <button type="submit" class="btn-guardar">ACTUALIZAR</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <!-- MANTENER CUALQUIER LÓGICA/VARIABLES QUE AÑADAS FUERA; aquí no hay JS que modifique comportamiento -->
+</body>
+</html>

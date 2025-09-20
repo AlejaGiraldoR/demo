@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Restablecer Contraseña — ListUp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/resetp.css">
+</head>
+<body>
+  <div class="frame">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="LOGO EMPRESA.png" alt="Logo ListUp">
+        <div>
+          <h1>ListUp</h1>
+          <p>Restablecer contraseña</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="card">
+        <h2>Restablece tu contraseña</h2>
+        <form id="resetForm">
+          <label for="new-password">Nueva contraseña:</label>
+          <input type="password" id="new-password" placeholder="••••••••" required>
+
+          <label for="confirm-password">Confirmar contraseña:</label>
+          <input type="password" id="confirm-password" placeholder="••••••••" required>
+
+          <p id="error-message" class="error-message">Las contraseñas no coinciden</p>
+          <p class="info-text">Su contraseña debe contener mínimo 8 caracteres, incluir mayúscula, minúscula y número</p>
+
+          <button type="submit">Actualizar contraseña</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="../js/resetp.js"></script>
+</body>
+</html>

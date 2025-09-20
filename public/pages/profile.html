@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Perfil - ListUp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+  <div class="frame">
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="LOGO EMPRESA.png" alt="Logo ListUp">
+        <div>
+          <h1>ListUp</h1>
+          <p>Mi perfil</p>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="card">
+        <div style="display:flex;gap:16px;align-items:center">
+          <div class="profile-pic"><img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" alt="Foto de perfil"></div>
+          <div>
+            <h2 style="margin:0">Neque porro quisme</h2>
+            <p style="margin:6px 0 0 0;color:var(--muted)">Miembro desde: 24 Junio 2025</p>
+          </div>
+        </div>
+
+        <div class="info">
+          <p><strong>Nombre y Apellido:</strong> Neque porro quisme</p>
+          <hr>
+          <p><strong>Edad:</strong> 27 años</p>
+          <hr>
+          <p><strong>Correo electrónico:</strong> loremipsum@gmail.com</p>
+          <hr>
+        </div>
+
+        <div class="buttons">
+          <button onclick="window.location.href='editprofile.html'" class="btn edit">Editar perfil</button>
+          <button onclick="window.location.href='deleteaccount.html'" class="btn delete">Eliminar cuenta</button>
+          <button id="logout-btn" class="btn logout">Cerrar sesión</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="../js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Eliminar cuenta — ListUp</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/deleteaccount.css">
+</head>
+<body>
+  <div class="frame">
+    <!-- Sidebar con logo y descripción -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="LOGO EMPRESA.png" alt="Logo empresa">
+        <div>
+          <h1>ListUp</h1>
+          <p>Gestión y tareas</p>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Área principal -->
+    <main class="main">
+      <div class="card">
+        <h2>¿Seguro que deseas ELIMINAR tu cuenta?</h2>
+        <p>Introduce tu contraseña y escribe <strong>ELIMINAR</strong> para confirmar esta acción irreversible.</p>
+
+        <input type="password" placeholder="Contraseña" id="password">
+        <input type="text" placeholder='Escribe "ELIMINAR" para confirmar' id="confirmText">
+
+        <div class="buttons">
+          <button class="btn cancel" onclick="window.location.href='profile.html'">Cancelar</button>
+          <button class="btn delete" onclick="deleteAccount()">Eliminar</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Modal -->
+  <div id="successModal" class="modal">
+    <div class="modal-content">
+      <h3>CUENTA ELIMINADA</h3>
+      <p>Tu cuenta ha sido eliminada con éxito.</p>
+      <button onclick="closeModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    function deleteAccount() {
+      const password = document.getElementById('password').value;
+      const confirmText = document.getElementById('confirmText').value;
+
+      if (password && confirmText === "ELIMINAR") {
+        document.getElementById('successModal').style.display = 'flex';
+      } else {
+        alert("Debes ingresar tu contraseña y escribir 'ELIMINAR' para confirmar.");
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('successModal').style.display = 'none';
+      window.location.href = "tasks.html";
+    }
+  </script>
+</body>
+</html>
